@@ -39,11 +39,11 @@ later analysis.
 
 Please notice that the following .m files are the functions used to identify the duplicated IPs, User-Agent strings, Error Code, Referrer, and Data transferred fields:
 
-CheckDuplicatesUserAgent.m
-CheckDuplicatesReferrer.m
-CheckDuplicatesIP.m
-CheckDuplicatesErrorCode.m
-CheckDuplicatesDataVolume.m
+* CheckDuplicatesUserAgent.m
+* CheckDuplicatesReferrer.m
+* CheckDuplicatesIP.m
+* CheckDuplicatesErrorCode.m
+* CheckDuplicatesDataVolume.m
 
 The output of Cleaning.m is a .mat file with similar name of the input plus a postfix 'AndCleaned.mat'.
 After this step, the data is ready for the Session identification. A function called SessionIdentifier (SessionIdentifier.m) tries to identify all the sessions according to the definitions explained in the paper (page. 132). Please note that a MATLAB script named ‘FeatureExtraction.m’ calls the SessionIdentifier function to first identify the sessions and then extract features (Table. 1 of the paper) for each session. Similarly, it asks the user to specify the input file (produced in the previous step with postfix ‘Cleaned’) and creates an output as an .mat file with ‘Sessions’ postfix in its name. For more information about the features extracted in this step, please refer to both Table 1 of the paper and the comments provided in FeatureExtraction.m. 
@@ -122,7 +122,7 @@ Eventually, the rest indicates how we calculate the metrics (Jaccard and Rand In
 
 ## Authors
 
-Mahdieh Zabihimayvan∗, Reza Sadeghi, H. Nathan Rude, Derek Doran.
+Mahdieh Zabihimayvan, Reza Sadeghi, H. Nathan Rude, Derek Doran.
 Department of Computer Science and Engineering, Kno.e.sis Research Center, Wright State University, Dayton, OH, USA.
 
 ## License
