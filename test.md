@@ -38,6 +38,7 @@ later analysis.
 4. Convert ‘NaN’ to the value 0 for some null fields.
 
 Please notice that the following .m files are the functions used to identify the duplicated IPs, User-Agent strings, Error Code, Referrer, and Data transferred fields:
+
 CheckDuplicatesUserAgent.m
 CheckDuplicatesReferrer.m
 CheckDuplicatesIP.m
@@ -46,21 +47,22 @@ CheckDuplicatesDataVolume.m
 
 The output of Cleaning.m is a .mat file with similar name of the input plus a postfix 'AndCleaned.mat'.
 After this step, the data is ready for the Session identification. A function called SessionIdentifier (SessionIdentifier.m) tries to identify all the sessions according to the definitions explained in the paper (page. 132). Please note that a MATLAB script named ‘FeatureExtraction.m’ calls the SessionIdentifier function to first identify the sessions and then extract features (Table. 1 of the paper) for each session. Similarly, it asks the user to specify the input file (produced in the previous step with postfix ‘Cleaned’) and creates an output as an .mat file with ‘Sessions’ postfix in its name. For more information about the features extracted in this step, please refer to both Table 1 of the paper and the comments provided in FeatureExtraction.m. 
+
 According to the SMART flowchart, after the pre-processing step, the initial features and sessions are ready to be used for feature selection, and clustering. To do so, we implement a script named SMART.m which contains the related codes, respectively. Similarly, the following explanations are based on the flowchart of SMART in the paper. 
 First, we specify the packages used in K-fold cross validation, and create the test and training packages. The variable named FoldNumber (equals to 10)shows the number of folds while the array named Fold contains the extracted folds. 
-
--Order=randperm(DataNumber);
+```
+Order=randperm(DataNumber);
 FoldSize=floor(DataNumber/FoldNumbers);
-for i=1:FoldNumbers-1**
+for i=1:FoldNumbers-1
     start=1+(i-1).FoldSize;
     finish=start+FoldSize-1;
-    Fold{i}=Order(start:finish);-
+    Fold{i}=Order(start:finish);
 end
 % These are the rest added to 10th Fold
-Fold{FoldNumbers}=Order(finish+1:end);**
-
+Fold{FoldNumbers}=Order(finish+1:end);
+```
 The following lines in the code show the arrays used to save the results of K-fold cross validation for the algorithms, i.e. SMART, NNRD, DBC_WRD.
-
+```
 %>>> Smart variables in k-fold
 FinalThreshold=zeros(ThresholdNumber,FoldNumbers);
 %Row->Threshold Column->Iteration
@@ -93,14 +95,15 @@ TPDBC_WRD=zeros(FoldNumbers,1);
 FPDBC_WRD=zeros(FoldNumbers,1);
 TNDBC_WRD=zeros(FoldNumbers,1);
 FNDBC_WRD=zeros(FoldNumbers,1);
-
+```
 
 The arrays whose names start with TP, TN, FP, FN prefixes are the arrays used to save the results of equations (13) and (14) of the paper. The rest indicate the arrays utilized to save the results reported in Figures (7) and (8) of the paper. For instance, MBNNRD shows the number of malicious robots NNRD identifies as benign. The lines below indicate what are selected as Train and Test datasets for each iteration of 10-fold cross validation. 
 
 In the following step, we call NNRD and DBC_WRD functions which implement the SOM Neural Network and DBSCAN algorithms according to the explanations of the paper. MATLAB files named NNRD.m and DBC_WRD.m indicate these functions.
-In the next step, we use the function called FRSFiltering to filter the initial features and select the final ones. This function divides the input data into 10 packages and run a function named FAA separately on each package. FAA is the main function implementing the Fuzzy Rough Feature Selection Algorithm based on the definitions presented in subsection 3.2 of the paper. The FRSFiltering output shows how many times (in percent) each feature is selected as final for the 10 packages. The next for loop indicate how we identify the final attributes for each FRS_thre value. For more information, please refer to the subsection 4.2 of the paper.
-Finally, for each FRS_thre value, we run the MCL clustering algorithm and compute the evaluation metrics.  
+In the next step, we use the function called FRSFiltering to filter the initial features and select the final ones. This function divides the input data into 10 packages and run a function named FAA separately on each package. FAA is the main function implementing the Fuzzy Rough Feature Selection Algorithm based on the definitions presented in subsection 3.2 of the paper. The FRSFiltering output shows how many times (in percent) each feature is selected as final for the 10 packages. The next for loop indicate how we identify the final attributes for each FRS threshold value. For more information please refere to the subsection 4.2 of the paper. 
 
+Finally, for each threshold value, we run the MCL clustering algorithm and compute the evaluation metrics.  
+```
 VisitPercentage=FRSFiltering(TrainFRSMCL,FeatureNumber);
 TotalVisitPercentage(Iteration,:)=VisitPercentage;
 for i=1:10
@@ -111,7 +114,7 @@ for i=1:10
         [TPSmart(i, Iteration), FPSmart(i, Iteration), TNSmart(i, Iteration), FNSmart(i, Iteration), MMSmart(i, Iteration),       MBSmart(i, Iteration), MHSmart(i, Iteration), BMSmart(i, Iteration), BBSmart(i, Iteration), BHSmart(i, Iteration)]=ClusteringMCL(TrainFRSMCL(:,SelectedFeature),Test(:,SelectedFeature));    
     end
 end
-
+```
 
 Also, ClusteringMCL is the function written to implement the MCL clustering algorithm. 
 Eventually, the rest indicates how we calculate the metrics (Jaccard and Rand Index) used in the Experiments Section of the paper.  
