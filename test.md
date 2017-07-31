@@ -49,7 +49,7 @@ After this step, the data is ready for the Session identification. A function ca
 According to the SMART flowchart, after the pre-processing step, the initial features and sessions are ready to be used for feature selection, and clustering. To do so, we implement a script named SMART.m which contains the related codes, respectively. Similarly, the following explanations are based on the flowchart of SMART in the paper. 
 First, we specify the packages used in K-fold cross validation, and create the test and training packages. The variable named FoldNumber (equals to 10)shows the number of folds while the array named Fold contains the extracted folds. 
 
-Order=randperm(DataNumber);
+**Order=randperm(DataNumber);
 FoldSize=floor(DataNumber/FoldNumbers);
 for i=1:FoldNumbers-1
     start=1+(i-1)*FoldSize;
@@ -57,7 +57,7 @@ for i=1:FoldNumbers-1
     Fold{i}=Order(start:finish);
 end
 % These are the rest added to 10th Fold
-Fold{FoldNumbers}=Order(finish+1:end);
+Fold{FoldNumbers}=Order(finish+1:end);**
 
 The following lines in the code show the arrays used to save the results of K-fold cross validation for the algorithms, i.e. SMART, NNRD, DBC_WRD.
 
