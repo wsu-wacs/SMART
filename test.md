@@ -117,15 +117,11 @@ Also, ClusteringMCL is the function written to implement the MCL clustering algo
 Eventually, the rest indicates how we calculate the metrics (Jaccard and Rand Index) used in the Experiments Section of the paper.  
 
 
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
 ## Authors
 
 Mahdieh Zabihimayvan∗, Reza Sadeghi, H. Nathan Rude, Derek Doran.
 Department of Computer Science and Engineering, Kno.e.sis Research Center, Wright State University, Dayton, OH, USA.
+
 ## License
 
 This program is distributed under the License on an "AS IS" BASIS, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE- see the [LICENSE.md](LICENSE.md) file for details.
