@@ -131,4 +131,4 @@ This program is distributed under the License on an "AS IS" BASIS, but WITHOUT A
 
 ## Acknowledgments
 
-This project is based on work supported by the National Science Foundation (NSF) under Grant no. 1464104. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the NSF.
+This project is based on work supported by --the National Science Foundation (NSF)-- under Grant no. **1464104**. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the NSF.
