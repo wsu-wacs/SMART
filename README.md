@@ -1,3 +1,6 @@
+Inline-style: 
+![alt text](http://knoesis.wright.edu/sites/default/files/A%20soft%20computing%20approach%20for%20benign%20and%20malicious%20web%20robot.pdf)
+
 # A soft computing approach for benign and malicious web robot detection
 
 This repository contains all the codes implemented for the experiments presented in the published paper **"A soft computing approach for benign and malicious web robot detection"**.
