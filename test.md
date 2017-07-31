@@ -13,8 +13,8 @@ All the codes in this repository are MATLAB files which can be executed by any v
 ## Running the codes
 
 According to the SMART flowchart (Figure 3 of paper), input is an access log file which should be prepared for first step (Session identification). The following explanations cover the pre processing steps implemented to convert the input access log files in a proper format.  
-First, we execute a MATLAB script named ‘ImportLog.m’ to  read the data set (text file) and specify the necessary fields. The data sets used in this project have the Common Log Format (CLF) which looks something like this:
-127.0.0.1 - frank [10/Oct/2000:13:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 200 2326
+First, we execute a MATLAB script named ‘ImportLog.m’ to  read the data set (text file) and specify the necessary fields. The data sets used in this project have the **Common Log Format (CLF)** which looks something like this:
+```127.0.0.1 - frank [10/Oct/2000:13:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 200 2326```
 
 The lines below show the related codes of this script to specify the nine necessary field:
 ```
