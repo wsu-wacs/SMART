@@ -18,7 +18,7 @@ First, we execute a MATLAB script named ‘ImportLog.m’ to  read the data set 
 
 The lines below show the related codes of this script to specify the nine necessary field:
 
-    Space=find(line==' ');
+    ** Space=find(line==' ');
     IP{i}=line(1:Space(1)-1);
     DateTime{i}=line(Space(3)+2:Space(4)-1);
     HttpMethod{i}=line(Space(5)+2:Space(6)-1);
@@ -26,7 +26,7 @@ The lines below show the related codes of this script to specify the nine necess
     ErrorCode{i}=line(Space(8)+1:Space(9)-1);
     DataVolume{i}=line(Space(9)+1:Space(10)-1);
     Referrer{i}=line(Space(10)+2:Space(11)-2);
-    UserAgent{i}=line(Space(11)+1:end);
+    UserAgent{i}=line(Space(11)+1:end); **
 
 The output is a .mat file in the same path of the input. It is worth mentioning that a file with a .mat extension contains MATLAB formatted data (the fields indicated above) and this data can be loaded from or written to this file by using the functions LOAD and SAVE, respectively. Also, the name of output file is similar to the name of input file plus the postfix ‘Converted.mat‘. 
 In the next step, we execute a script called ‘Cleaning.m’. This script asks the user for the input file which have been produced in the previous step (.Converted’ file). The aim of this step is to:
