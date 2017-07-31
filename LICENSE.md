@@ -14,7 +14,7 @@
      GNU General Public License for more details.
  
      You should have received a copy of the GNU General Public License
-     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+     along with this program.  If not, see [GNU General Public License](http://www.gnu.org/licenses/).
 
      Using this code or any associated file of this package in a publication, 
      please CITE the related paper as below:
