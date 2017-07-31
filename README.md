@@ -2,7 +2,7 @@
 
 # A soft computing approach for benign and malicious web robot detection
 
-This repository contains all the codes implemented for the experiments presented in the published paper **["A soft computing approach for benign and malicious web robot detection"]**(http://www.sciencedirect.com/science/article/pii/S0957417417304116)
+This repository contains all the codes implemented for the experiments presented in the published paper [**"A soft computing approach for benign and malicious web robot detection"**](http://www.sciencedirect.com/science/article/pii/S0957417417304116)
 
 ## Getting Started
 
