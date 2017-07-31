@@ -1,4 +1,3 @@
-Inline-style: 
 ![alt text](http://image-store.slidesharecdn.com/25047bc7-307c-4227-89ad-314962745612-original.png "Logo Title Text 1")
 
 # A soft computing approach for benign and malicious web robot detection
