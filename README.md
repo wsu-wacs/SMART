@@ -1,5 +1,5 @@
 Inline-style: 
-![alt text](https://www.linkedin.com/in/mahdieh-zabihimayvan-5455b774/detail/recent-activity/shares/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_recent_activity_details_shares%3BHeWrGIroQ6Kjxp6YlqOIAw%3D%3D&licu=urn%3Ali%3Acontrol%3Ad_flagship3_profile_view_base_recent_activity_details_shares-object# "Logo Title Text 1")
+![alt text](http://image-store.slidesharecdn.com/25047bc7-307c-4227-89ad-314962745612-original.png "Logo Title Text 1")
 
 # A soft computing approach for benign and malicious web robot detection
 
